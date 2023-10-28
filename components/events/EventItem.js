@@ -1,5 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "../ui/button";
+import CalendarDays from "../icons/calendar-days";
+import MapPin from "../icons/map-pin";
+import ArrowRightCircle from "../icons/arrow-right-circle";
 
 export default function EventItem(featuredEvent) {
   const humanReadableDate = new Date(featuredEvent.date).toLocaleDateString(
@@ -22,18 +25,25 @@ export default function EventItem(featuredEvent) {
         />
       </div>
 
-      <div className="w-2/3 ml-4">
+      <div className="w-2/3 ml-4 flex flex-col justify-between">
         <h2 className="text-xl font-semibold">{featuredEvent.title}</h2>
-        <div className="text-gray-600">
+        <div className="text-gray-600 flex">
+          <CalendarDays />
           <time>{humanReadableDate}</time>
         </div>
-        <div className="text-gray-600">
+        <div className="text-gray-600 flex">
+          <MapPin className="pr-4" />
           <address>{formattedAddress}</address>
         </div>
         <div className="mt-2">
-          <Link href={exploreLink} className="text-blue-500 hover:underline">
-            Explore Event
-          </Link>
+          <Button link={exploreLink}>
+            <span className="flex items-center">
+              Explore Event
+              <span className="ml-2">
+                <ArrowRightCircle />
+              </span>
+            </span>
+          </Button>
         </div>
       </div>
     </li>
