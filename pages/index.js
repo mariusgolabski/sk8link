@@ -9,7 +9,6 @@ export default function HomePage() {
 
   return (
     <main className={`min-h-screen ${inter.className}`}>
-      <h1>Home</h1>
       <EventList featuredEvents={featuredEvents} />
     </main>
   );

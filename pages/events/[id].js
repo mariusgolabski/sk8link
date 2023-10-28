@@ -14,19 +14,17 @@ export default function EventDetailPage() {
   }
 
   return (
-    <main className="min-h-screen">
-      <article>
-        <EventSummary title={event.title} />
-        <EventLogistics
-          date={event.date}
-          address={event.location}
-          image={event.image}
-          imageAlt={event.title}
-        />
-        <EventContent>
-          <p>{event.description}</p>
-        </EventContent>
-      </article>
-    </main>
+    <article>
+      <EventSummary title={event.title} />
+      <EventLogistics
+        date={event.date}
+        address={event.location}
+        image={event.image}
+        imageAlt={event.title}
+      />
+      <EventContent>
+        <p>{event.description}</p>
+      </EventContent>
+    </article>
   );
 }
