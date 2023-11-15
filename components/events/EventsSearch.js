@@ -1,9 +1,16 @@
-import Button from "../ui/button";
+import { useRef } from "react";
+import Button from "../ui/Button";
 
-export default function EventsSearch() {
+export default function EventsSearch({ onSearch }) {
+  const yearInputRef = useRef();
+  const monthInputRef = useRef();
+
   function submitHandler(event) {
     event.preventDefault();
-    console.log("click");
+    const selectedYear = yearInputRef.current.value;
+    const selectedMonth = monthInputRef.current.value;
+
+    onSearch(selectedYear, selectedMonth);
   }
 
   return (
@@ -11,14 +18,14 @@ export default function EventsSearch() {
       <div>
         <div>
           <label htmlFor="year">Year</label>
-          <select id="year">
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
+          <select id="year" ref={yearInputRef}>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
           </select>
         </div>
         <div>
           <label htmlFor="month">Month</label>
-          <select id="month">
+          <select id="month" ref={monthInputRef}>
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
