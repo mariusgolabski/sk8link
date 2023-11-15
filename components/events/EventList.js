@@ -1,16 +1,16 @@
 import EventItem from "./EventItem";
 
-export default function EventList({ featuredEvents }) {
+export default function EventList({ events }) {
   return (
     <ul>
-      {featuredEvents.map((featuredEvent) => (
+      {events.map((event) => (
         <EventItem
-          key={featuredEvent.id}
-          id={featuredEvent.id}
-          title={featuredEvent.title}
-          location={featuredEvent.location}
-          date={featuredEvent.date}
-          image={featuredEvent.image}
+          key={event.id}
+          id={event.id}
+          title={event.title}
+          location={event.location}
+          date={event.date}
+          image={event.image}
         />
       ))}
     </ul>

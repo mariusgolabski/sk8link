@@ -10,7 +10,7 @@ export default function MainHeader() {
         </Link>
         <ul>
           <li>
-            <Link href="events">All Events</Link>
+            <Link href="/events">All Events</Link>
           </li>
         </ul>
         <Button link="#">Get Started</Button>
