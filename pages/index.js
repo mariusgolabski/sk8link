@@ -30,6 +30,7 @@ export async function getStaticProps() {
       props: {
         featuredEvents,
       },
+      revalidate: 600,
     };
   } catch (error) {
     console.error("Error fetching data:", error.message);
