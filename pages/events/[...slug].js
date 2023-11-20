@@ -1,4 +1,3 @@
-import { getFilteredEvents } from "@/dummy-data";
 import { useRouter } from "next/router";
 import EventList from "@/components/events/EventList";
 import ResultsTitle from "@/components/events/ResultsTitle";
