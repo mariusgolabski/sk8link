@@ -1,16 +1,9 @@
-import { Inter } from "next/font/google";
 import EventList from "@/components/events/EventList";
 import { database } from "../firebase";
 import { ref, query, orderByChild, equalTo, get } from "firebase/database";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function HomePage({ featuredEvents }) {
-  return (
-    <main className={`min-h-screen ${inter.className}`}>
-      <EventList events={featuredEvents} />
-    </main>
-  );
+  return <EventList events={featuredEvents} />;
 }
 
 export async function getStaticProps() {
