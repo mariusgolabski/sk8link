@@ -1,15 +1,19 @@
 import Layout from "@/components/layout/Layout";
 import "@/styles/globals.css";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <style jsx global>{`
         html {
-          font-family: ${inter.style.fontFamily};
+          font-family: ${poppins.style.fontFamily};
         }
       `}</style>
       <Layout>
