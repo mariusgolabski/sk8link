@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Button from "../ui/Button";
 
 export default function MainHeader() {
   return (
@@ -13,7 +12,6 @@ export default function MainHeader() {
             <Link href="/events">All Events</Link>
           </li>
         </ul>
-        <Button link="#">Get Started</Button>
       </nav>
     </header>
   );
