@@ -1,9 +1,15 @@
 import EventList from "@/components/events/EventList";
 import { database } from "../firebase";
 import { ref, query, orderByChild, equalTo, get } from "firebase/database";
+import SectionHero from "@/components/section-hero/SectionHero";
 
 export default function HomePage({ featuredEvents }) {
-  return <EventList events={featuredEvents} />;
+  return (
+    <>
+      <SectionHero />
+      <EventList events={featuredEvents} />;
+    </>
+  );
 }
 
 export async function getStaticProps() {
