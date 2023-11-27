@@ -17,7 +17,7 @@ export default function SectionHero({}) {
           </span>
         </div>
         <div className="flex-grow">
-          <Image className="w-full" src={rightImg} alt="" />
+          <Image className="w-full" src={rightImg} alt="Skate in Action" />
         </div>
       </div>
     </section>
