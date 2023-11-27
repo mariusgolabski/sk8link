@@ -1,3 +1,4 @@
+import Head from "next/head";
 import EventList from "@/components/events/EventList";
 import { database } from "../firebase";
 import { ref, query, orderByChild, equalTo, get } from "firebase/database";
@@ -6,6 +7,13 @@ import SectionHero from "@/components/section-hero/SectionHero";
 export default function HomePage({ featuredEvents }) {
   return (
     <>
+      <Head>
+        <title>Skate Events | Home</title>
+        <meta
+          name="description"
+          content="Find the latest skate events in your area and around the world."
+        />
+      </Head>
       <SectionHero />
       <div className="py-16">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-12 text-neutral-900">

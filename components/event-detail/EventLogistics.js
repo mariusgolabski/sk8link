@@ -1,6 +1,7 @@
 import LogisticsItem from "./LogisticsItem";
 import MapPin from "../icons/map-pin";
 import CalendarDays from "../icons/calendar-days";
+import Image from "next/image";
 
 export default function EventLogistics({ date, address, image, imageAlt }) {
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
@@ -14,7 +15,14 @@ export default function EventLogistics({ date, address, image, imageAlt }) {
   return (
     <div>
       <div>
-        <img src={`/${image}`} alt={imageAlt} />
+        <Image
+          alt={imageAlt}
+          className="w-full rounded-xl container my-10 sm:my-12"
+          src={`/${image}`}
+          width={1260}
+          height={750}
+          sizes="(max-width: 1024px) 100vw, 1280px"
+        />
       </div>
       <ul>
         <LogisticsItem icon={CalendarDays}>
