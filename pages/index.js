@@ -7,7 +7,20 @@ export default function HomePage({ featuredEvents }) {
   return (
     <>
       <SectionHero />
-      <EventList events={featuredEvents} />;
+      <div className="py-16">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 md:mb-12 text-neutral-900">
+          <div className="text-center w-full max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
+              Featured Events
+            </h2>
+            <span className="mt-2 md:mt-3 font-normal block text-base sm:text-xl xl:text-lg text-neutral-500">
+              Dive in, ride the excitement of skateboarding&apos;s finest
+              events!
+            </span>
+          </div>
+        </div>
+        <EventList events={featuredEvents} />
+      </div>
     </>
   );
 }
