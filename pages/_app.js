@@ -1,6 +1,7 @@
 import Layout from "@/components/layout/Layout";
 import "@/styles/globals.css";
 import { Poppins } from "next/font/google";
+import Head from "next/head";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,6 +18,14 @@ export default function App({ Component, pageProps }) {
         }
       `}</style>
       <Layout>
+        <Head>
+          <title>Skate Events</title>
+          <meta name="description" content="Skate Events" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+        </Head>
         <Component {...pageProps} />
       </Layout>
     </>

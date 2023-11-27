@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/router";
 import EventList from "@/components/events/EventList";
 import ResultsTitle from "@/components/events/ResultsTitle";
@@ -17,18 +18,36 @@ export default function FilteredEventsPage({ filteredEvents }) {
   const router = useRouter();
   const filterData = router.query.slug;
 
-  if (!filterData) {
-    return <p className="center">Loading...</p>;
-  }
-
   const { isValidYear, isValidMonth, filteredYear, filteredMonth } =
     validateFilterData(filterData[0], filterData[1]);
 
+  const pageHeadData = (
+    <Head>
+      <title>Skate Events | Filtered Events</title>
+      <meta
+        name="description"
+        content={`All events for ${filteredYear}/${filteredMonth}.`}
+      />
+    </Head>
+  );
+
+  if (!filterData) {
+    return (
+      <>
+        {pageHeadData}
+        <p className="center">Loading...</p>;
+      </>
+    );
+  }
+
   if (!isValidYear || !isValidMonth) {
     return (
-      <ErrorAlert>
-        <p>Invalid Filter. Please adjust your values!</p>
-      </ErrorAlert>
+      <>
+        {pageHeadData}
+        <ErrorAlert>
+          <p>Invalid Filter. Please adjust your values!</p>
+        </ErrorAlert>
+      </>
     );
   }
 
@@ -38,6 +57,7 @@ export default function FilteredEventsPage({ filteredEvents }) {
     <>
       {filteredEvents.length === 0 ? (
         <>
+          {pageHeadData}
           <ErrorAlert>
             <p>No events found for the chosen filter!</p>
           </ErrorAlert>
@@ -45,6 +65,7 @@ export default function FilteredEventsPage({ filteredEvents }) {
         </>
       ) : (
         <>
+          {pageHeadData}
           <ResultsTitle date={date} />
           <EventList events={filteredEvents} />
         </>
