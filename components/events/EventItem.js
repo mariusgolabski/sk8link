@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import CalendarDays from "../icons/calendar-days";
 import MapPin from "../icons/map-pin";
 import ArrowRightCircle from "../icons/arrow-right-circle";
+import Link from "next/link";
 
 export default function EventItem(featuredEvent) {
   const humanReadableDate = new Date(featuredEvent.date).toLocaleDateString(
@@ -14,38 +15,46 @@ export default function EventItem(featuredEvent) {
   const exploreLink = `/events/${featuredEvent.id}`;
 
   return (
-    <li className="border rounded-lg shadow-md p-4 m-2 md:m-4 lg:m-6 xl:m-8 flex">
-      <div className="w-1/3 relative">
+    <div className="flex flex-col sm:col-span-3 lg:col-span-2">
+      <Link
+        href={exploreLink}
+        className="block flex-shrink-0 w-full rounded-3xl overflow-hidden aspect-w-3 xl:aspect-w-4 aspect-h-3"
+      >
         <Image
+          fill
+          alt=""
+          sizes="(max-width: 600px) 480px, 800px"
           src={`/${featuredEvent.image}`}
-          alt={featuredEvent.title}
-          width={250}
-          height={160}
-          className="w-full h-40 object-cover rounded-lg"
+          className="object-cover"
         />
-      </div>
+      </Link>
 
-      <div className="w-2/3 ml-4 flex flex-col justify-between">
-        <h2 className="text-xl font-semibold">{featuredEvent.title}</h2>
-        <div className="text-gray-600 flex">
-          <CalendarDays />
-          <time>{humanReadableDate}</time>
-        </div>
-        <div className="text-gray-600 flex">
-          <MapPin className="pr-4" />
-          <address>{formattedAddress}</address>
-        </div>
-        <div className="mt-2">
-          <Button link={exploreLink}>
-            <span className="flex items-center">
-              Explore Event
-              <span className="ml-2">
-                <ArrowRightCircle />
-              </span>
-            </span>
-          </Button>
+      <div className="transform -mt-12">
+        <div className="p-5 mt-5 bg-white shadow-xl rounded-3xl rounded-tl-none rounded-tr-none flex flex-col ">
+          <h2 className="sm:text-lg lg:text-xl font-semibold text-neutral-900 hover:text-blue-900 duration-75">
+            <Link
+              href={exploreLink}
+              className="line-clamp-1"
+              title={featuredEvent.title}
+            >
+              {featuredEvent.title}
+            </Link>
+          </h2>
+          <div className="text-sm text-neutral-500 mt-3 mb-5">
+            <span className="line-clamp-2">{featuredEvent.description}</span>
+          </div>
+
+          <div className="flex items-center text-xs text-neutral-700">
+            <CalendarDays />
+            <time className="ml-1">{humanReadableDate}</time>
+          </div>
+
+          <div className="flex items-center text-xs text-neutral-700 mt-2">
+            <MapPin />
+            <address className="ml-1">{formattedAddress}</address>
+          </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 }
