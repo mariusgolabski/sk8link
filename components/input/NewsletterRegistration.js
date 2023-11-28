@@ -1,6 +1,25 @@
+import { useRef } from "react";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 export default function NewsletterRegistration() {
+  const emailInputRef = useRef();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const enteredEmail = emailInputRef.current.value;
+
+    fetch("/api/newsletter", {
+      method: "POST",
+      body: JSON.stringify({ email: enteredEmail }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }
+
   return (
     <section className="pt-10 pb-16 lg:pt-28 lg:pb-28">
       <div className="flex flex-col items-center p-5 bg-slate-100 rounded-xl sm:rounded-3xl lg:rounded-[40px] shadow-lg sm:p-10 lg:p-16">
@@ -15,7 +34,7 @@ export default function NewsletterRegistration() {
         </div>
         <form onSubmit={handleSubmit} className="w-full max-w-md relative">
           <input
-            ref={email}
+            ref={emailInputRef}
             className="w-full border border-slate-300 focus:outline-none focus:ring focus:ring-slate-200 bg-white rounded-full text-sm font-normal h-11 px-4 py-3"
             type="email"
             name="email"
