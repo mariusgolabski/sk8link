@@ -3,6 +3,7 @@ import EventList from "@/components/events/EventList";
 import { database } from "../firebase";
 import { ref, query, orderByChild, equalTo, get } from "firebase/database";
 import SectionHero from "@/components/section-hero/SectionHero";
+import NewsletterRegistration from "@/components/input/NewsletterRegistration";
 
 export default function HomePage({ featuredEvents }) {
   return (
@@ -29,6 +30,7 @@ export default function HomePage({ featuredEvents }) {
         </div>
         <EventList events={featuredEvents} />
       </div>
+      <NewsletterRegistration />
     </>
   );
 }
