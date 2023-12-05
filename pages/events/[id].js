@@ -4,6 +4,7 @@ import EventContent from "@/components/event-detail/EventContent";
 import EventLogistics from "@/components/event-detail/EventLogistics";
 import { database } from "../../firebase";
 import { ref, query, get } from "firebase/database";
+import Comments from "@/components/input/Comment";
 
 export default function EventDetailPage({ selectedEvent }) {
   const event = selectedEvent;
@@ -30,6 +31,7 @@ export default function EventDetailPage({ selectedEvent }) {
           <p>{event.description}</p>
         </EventContent>
       </article>
+      <Comments eventId={event.id} />
     </>
   );
 }
