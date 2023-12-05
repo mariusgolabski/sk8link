@@ -6,6 +6,7 @@ const newsletterSubscriberSchema = new Schema({
     type: String,
     required: true,
     unique: true,
+    lowercase: true,
   },
 });
 
