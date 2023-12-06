@@ -40,7 +40,7 @@ export default function NewComment({ onAddComment }) {
         <label className="block " htmlFor="email">
           <span className="text-neutral-800 font-medium text-sm">Email</span>
           <input
-            className="block w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200/50 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
+            className="block w-full border border-neutral-200 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
             type="email"
             id="email"
             ref={emailInputRef}
@@ -51,7 +51,7 @@ export default function NewComment({ onAddComment }) {
             Your name
           </span>
           <input
-            className="block w-full border border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200/50 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
+            className="block w-full border border-neutral-200 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
             type="text"
             id="name"
             ref={nameInputRef}
@@ -63,7 +63,7 @@ export default function NewComment({ onAddComment }) {
             your comment
           </span>
           <textarea
-            className="border py-2 px-3 block w-full text-sm rounded-xl border-neutral-200 focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white mt-1"
+            className="border py-2 px-3 block w-full text-sm rounded-xl border-neutral-200 bg-white mt-1"
             id="comment"
             rows="5"
             ref={commentInputRef}
@@ -71,7 +71,9 @@ export default function NewComment({ onAddComment }) {
         </label>
 
         {isInvalid && <p>Please enter a valid email address and comment!</p>}
-        <button className="flex-shrink-0 relative h-auto inline-flex items-center justify-center rounded-full transition-colors border-transparent bg-slate-700 hover:bg-slate-600 text-yellow-50 text-sm sm:text-base font-medium py-3 px-4 sm:py-3.5 sm:px-6 md:col-span-2 ">
+        <button
+          className="flex-shrink-0 relative h-auto inline-flex items-center justify-center rounded-full transition-colors border-transparent bg-slate-700 hover:bg-slate-600 text-yellow-50 text-sm sm:text-base font-medium py-3 px-4 sm:py-3.5 sm:px-6 md:col-span-2"
+        >
           Submit
         </button>
       </form>
