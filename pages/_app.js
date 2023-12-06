@@ -1,4 +1,5 @@
 import Layout from "@/components/layout/Layout";
+import { NotificationContextProvider } from "@/store/NotificationContext";
 import "@/styles/globals.css";
 import { Poppins } from "next/font/google";
 import Head from "next/head";
@@ -17,17 +18,19 @@ export default function App({ Component, pageProps }) {
           font-family: ${poppins.style.fontFamily};
         }
       `}</style>
-      <Layout>
-        <Head>
-          <title>Skate Events</title>
-          <meta name="description" content="Skate Events" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-        </Head>
-        <Component {...pageProps} />
-      </Layout>
+      <NotificationContextProvider>
+        <Layout>
+          <Head>
+            <title>Skate Events</title>
+            <meta name="description" content="Skate Events" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
+          </Head>
+          <Component {...pageProps} />
+        </Layout>
+      </NotificationContextProvider>
     </>
   );
 }
