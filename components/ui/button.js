@@ -4,15 +4,15 @@ export default function Button({ children, link, onClick }) {
   if (link) {
     return (
       <Link href={link}>
-        <div className="inline-block bg-gray-950 hover:bg-gray-800 text-white font-medium px-4 py-2 rounded-md transition duration-300 h-11">
+        <button className="flex items-center justify-center font-medium px-5 text-sm py-3 rounded-full bg-slate-900 hover:bg-slate-700 text-slate-50">
           {children}
-        </div>
+        </button>
       </Link>
     );
   }
   return (
     <button
-      className="inline-block bg-gray-950 hover:bg-gray-800 text-white font-medium px-4 py-2 rounded-md transition duration-300 h-11"
+      className="flex items-center justify-center font-medium px-5 text-sm py-3 rounded-full bg-slate-900 hover:bg-slate-700 text-slate-50"
       onClick={onClick}
     >
       {children}
