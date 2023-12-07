@@ -35,48 +35,48 @@ export default function NewComment({ onAddComment }) {
   }
 
   return (
-    <div className="rounded-xl md:border md:border-neutral-100 md:p-6">
-      <form className="grid md:grid-cols-2 gap-6" onSubmit={sendCommentHandler}>
-        <label className="block " htmlFor="email">
-          <span className="text-neutral-800 font-medium text-sm">Email</span>
-          <input
-            className="block w-full border border-neutral-200 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
-            type="email"
-            id="email"
-            ref={emailInputRef}
-          />
-        </label>
-        <label className="block " htmlFor="name">
-          <span className="text-neutral-800 font-medium text-sm ">
-            Your name
-          </span>
-          <input
-            className="block w-full border border-neutral-200 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
-            type="text"
-            id="name"
-            ref={nameInputRef}
-          />
-        </label>
+    <form
+      className="grid md:grid-cols-2 gap-6 my-10"
+      onSubmit={sendCommentHandler}
+    >
+      <label htmlFor="email">
+        <span className="text-neutral-800 font-medium text-sm">Email</span>
+        <input
+          className="block w-full border border-neutral-200 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
+          type="email"
+          id="email"
+          ref={emailInputRef}
+          required
+        />
+      </label>
+      <label htmlFor="name">
+        <span className="text-neutral-800 font-medium text-sm ">Your name</span>
+        <input
+          className="block w-full border border-neutral-200 bg-white rounded-full text-sm font-normal h-11 px-4 py-3 mt-1"
+          type="text"
+          id="name"
+          ref={nameInputRef}
+          required
+        />
+      </label>
 
-        <label className="block md:col-span-2" htmlFor="comment">
-          <span className="nc-Label  text-neutral-800 font-medium text-sm">
-            your comment
-          </span>
-          <textarea
-            className="border py-2 px-3 block w-full text-sm rounded-xl border-neutral-200 bg-white mt-1"
-            id="comment"
-            rows="5"
-            ref={commentInputRef}
-          ></textarea>
-        </label>
+      <label className="col-span-2" htmlFor="comment">
+        <span className="text-neutral-800 font-medium text-sm">
+          Your Comment
+        </span>
+        <textarea
+          className="border py-2 px-3 block w-full text-sm rounded-xl border-neutral-200 bg-white mt-1"
+          id="comment"
+          rows="5"
+          ref={commentInputRef}
+          required
+        ></textarea>
+      </label>
 
-        {isInvalid && <p>Please enter a valid email address and comment!</p>}
-        <button
-          className="flex-shrink-0 relative h-auto inline-flex items-center justify-center rounded-full transition-colors border-transparent bg-slate-700 hover:bg-slate-600 text-yellow-50 text-sm sm:text-base font-medium py-3 px-4 sm:py-3.5 sm:px-6 md:col-span-2"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
+      {isInvalid && <p>Please enter a valid email address and comment!</p>}
+      <button className="col-span-2 flex w-full items-center justify-center font-medium px-5 text-sm py-3 rounded-full bg-slate-900 hover:bg-slate-700 text-slate-50">
+        Submit
+      </button>
+    </form>
   );
 }

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import CommentList from "./CommentList";
 import NewComment from "./NewComment";
 import NotificationContext from "@/store/NotificationContext";
+import Button from "../ui/Button";
 
 export default function Comments({ eventId }) {
   const notificationCtx = useContext(NotificationContext);
@@ -63,10 +64,12 @@ export default function Comments({ eventId }) {
   }
 
   return (
-    <section>
-      <button onClick={toggleCommentsHandler}>
-        {showComments ? "Hide" : "Show"} Comments
-      </button>
+    <section className="max-w-screen-md mx-auto mb-20">
+      <div className="flex justify-center">
+        <Button onClick={toggleCommentsHandler}>
+          {showComments ? "Hide" : "Show"} Comments
+        </Button>
+      </div>
       {showComments && <NewComment onAddComment={addCommentHandler} />}
       {showComments && !isFetchingComments && (
         <CommentList comments={comments} />
