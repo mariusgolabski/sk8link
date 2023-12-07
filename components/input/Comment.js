@@ -21,7 +21,7 @@ export default function Comments({ eventId }) {
           setIsFetchingComments(false);
         });
     }
-  }, [showComments]);
+  }, [showComments, eventId]);
 
   function toggleCommentsHandler() {
     setShowComments((prevStatus) => !prevStatus);
