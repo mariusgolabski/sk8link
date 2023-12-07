@@ -60,8 +60,8 @@ export default function FilteredEventsPage({ filteredEvents }) {
           {pageHeadData}
           <ErrorAlert>
             <p>No events found for the chosen filter!</p>
+            <Button link="/events">Show all events</Button>
           </ErrorAlert>
-          <Button link="/events">Show all events</Button>
         </>
       ) : (
         <>
