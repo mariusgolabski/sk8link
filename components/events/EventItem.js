@@ -31,7 +31,7 @@ export default function EventItem(featuredEvent) {
 
       <div className="transform -mt-12">
         <div className="p-5 mt-5 bg-white shadow-xl rounded-3xl rounded-tl-none rounded-tr-none flex flex-col ">
-          <h2 className="sm:text-lg lg:text-xl font-semibold text-neutral-900 hover:text-blue-900 duration-75">
+          <h2 className="sm:text-lg lg:text-xl font-semibold text-neutral-900 hover:text-slate-700 duration-75">
             <Link
               href={exploreLink}
               className="line-clamp-1"

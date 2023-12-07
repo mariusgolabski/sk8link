@@ -1,9 +1,7 @@
 export default function EventSummary({ title }) {
   return (
-    <div>
-      <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl ">
-        {title}
-      </h1>
-    </div>
+    <h1 className="text-neutral-900 font-semibold text-3xl md:text-4xl md:!leading-[120%] lg:text-5xl max-w-4xl">
+      {title}
+    </h1>
   );
 }

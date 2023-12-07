@@ -9,7 +9,12 @@ export default function MainHeader() {
         </Link>
         <ul>
           <li>
-            <Link href="/events">All Events</Link>
+            <Link
+              className="text-sm lg:text-[15px] font-medium py-2.5 px-4 xl:px-5 rounded-full text-slate-900 bg-slate-100 hover:bg-slate-200"
+              href="/events"
+            >
+              All Events
+            </Link>
           </li>
         </ul>
       </nav>

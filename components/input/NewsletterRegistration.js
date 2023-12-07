@@ -55,7 +55,7 @@ export default function NewsletterRegistration() {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
             Sign Up for New Skate Events!
           </h2>
-          <span className="mt-2 md:mt-3 font-normal block text-base sm:text-xl xl:text-lg text-neutral-500">
+          <span className="mt-2 md:mt-3 block text-base xl:text-lg text-neutral-500">
             Stay in the loop with the latest skate events! Sign up for exclusive
             updates.
           </span>
