@@ -1,8 +1,6 @@
 import Image from "next/image";
-import Button from "../ui/Button";
 import CalendarDays from "../icons/calendar-days";
 import MapPin from "../icons/map-pin";
-import ArrowRightCircle from "../icons/arrow-right-circle";
 import Link from "next/link";
 
 export default function EventItem(featuredEvent) {
