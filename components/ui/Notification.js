@@ -9,11 +9,11 @@ function Notification({ title, message, status }) {
     "p-2 md:p-8 fixed bottom-0 left-0 w-full flex justify-between items-center text-white cursor-pointer shadow-md";
 
   if (status === "success") {
-    statusClasses += " bg-green-500";
+    statusClasses += " bg-green-400";
   } else if (status === "error") {
-    statusClasses += " bg-red-600";
+    statusClasses += " bg-red-400";
   } else if (status === "pending") {
-    statusClasses += " bg-blue-500";
+    statusClasses += " bg-blue-400";
   } else {
     statusClasses += " bg-gray-900";
   }
