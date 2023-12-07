@@ -22,6 +22,7 @@ export default function EventsSearch({ onSearch }) {
               Year
             </span>
             <select
+              defaultValue="2024"
               className="block w-full border border-neutral-200 bg-white rounded-lg text-sm font-normal h-11 px-4 py-2 mt-1"
               id="year"
               ref={yearInputRef}
